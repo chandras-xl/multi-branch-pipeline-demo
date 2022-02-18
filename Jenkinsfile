@@ -50,4 +50,16 @@ pipeline{
             }
         }
     }
+    post{
+        success{
+            slackSend channel: '#jenkinsci',
+                      color: 'good',
+                      message: "Executed job ${currentBuild.fullDisplayName} successfully"
+        }
+        failure{
+            slackSend channel: '$jenkinsci',
+                      color: 'danger',
+                      message: "Failed to execute job ${currentBuild.fullDisplayName}"
+        }
+    }
 }
