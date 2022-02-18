@@ -54,7 +54,7 @@ pipeline{
         success{
             sendSlack channel: '#jenkinsci',
                       color: 'good',
-                      message: "Executed job ${currentBuild.fullDisplayName}"
+                      message: "Executed job ${currentBuild.fullDisplayName} successfully"
         }
         failure{
             slackSend channel: '$jenkinsci',
