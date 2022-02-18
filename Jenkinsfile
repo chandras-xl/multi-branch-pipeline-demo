@@ -59,7 +59,7 @@ pipeline{
         failure{
             slackSend channel: '$jenkinsci',
                       color: 'danger',
-                      message: 'Failed to execute job ${currentBuild.fullDisplayName}'
+                      message: "Failed to execute job ${currentBuild.fullDisplayName}"
         }
     }
 }
